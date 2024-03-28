@@ -247,7 +247,7 @@ function run(){
     this.code=code2arr(document.getElementById('code').value);
     this.orig_code=document.getElementById('code').value;
     display_queue();
-    this.tid=setInterval(interv,50);
+    this.tid=setInterval(interv,parseInt(document.getElementById('speed').value));
 }
 function stop(){
     clearInterval(tid);
