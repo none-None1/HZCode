@@ -239,10 +239,16 @@ function display_queue(){
 function interv(){
     interpret_step(code,code.length,code[0].length);
     display_queue();
-    if(!queue.length) clearInterval(tid);
+    if(!queue.length){
+        clearInterval(tid);
+        document.getElementById('run').removeAttribute('disabled');
+        document.getElementById('load').removeAttribute('disabled');
+    }
 }
 function run(){
     var input=document.getElementById('input').value;
+    document.getElementById('run').setAttribute('disabled',true);
+    document.getElementById('load').setAttribute('disabled',true);
     init(input);
     this.code=code2arr(document.getElementById('code').value);
     this.orig_code=document.getElementById('code').value;
@@ -251,4 +257,6 @@ function run(){
 }
 function stop(){
     clearInterval(tid);
+    document.getElementById('run').removeAttribute('disabled');
+    document.getElementById('load').removeAttribute('disabled');
 }
