@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="ttl">HZCode Visual Interpreter</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <table border="1" class="hidden" id="vistbl">
+            <tbody id="vis">
+
+            </tbody>
+        </table>
+        <br>
+        <textarea placeholder="Code Here..." rows=20 cols=80 id="code"></textarea>
+        <textarea placeholder="Input Here..." rows=20 cols=80 id="input"></textarea>
+        <textarea placeholder="Output Here..." rows=20 cols=80 id="output" readonly></textarea>
+        <script src="parse.js"></script>
+        <script src="interpreter.js"></script>
+        <script>
+            var lang=((navigator.language||navigator.userLanguage)==="zh-CN");
+            function load(){
+                var x=document.getElementById('code').value;
+                document.getElementById('vistbl').className='shown';
+                document.getElementById('vis').innerHTML=parse(x,[]);
+            }
+        </script>
+        <button onclick="load()" id="load">Load</button>
+        <button onclick="run()" id="run">Run</button>
+        <button onclick="stop()" id="stop">Stop</button>
+        <label for="speed">Speed (ms): </label>
+        <input type=text id="speed" value="50"></input>
+        <p id="spec">HZCode is a 2D language that only uses Chinese characters.<br>Language documentation <a href="https://esolangs.org/wiki/HZCode">here</a>.
+        <br><br>Press "load" button to load code, press "run" button to run, and press the "stop" button to stop. You can also configure the speed (the interval time between two commands, in milliseconds).</p>
+        <div id="qu">
+
+        </div>
+        <script>
+            if(lang){
+                document.getElementById('ttl').innerHTML="HZCode\u53ef\u89c6\u5316\u89e3\u91ca\u5668";
+                document.getElementById('code').setAttribute('placeholder','\u8bf7\u8f93\u5165\u4ee3\u7801...');
+                document.getElementById('input').setAttribute('placeholder','\u7a0b\u5e8f\u8f93\u5165...');
+                document.getElementById('output').setAttribute('placeholder','\u7a0b\u5e8f\u8f93\u51fa...');
+                document.getElementById('load').innerHTML='\u52a0\u8f7d';
+                document.getElementById('run').innerHTML='\u8fd0\u884c';
+                document.getElementById('stop').innerHTML='\u505c\u6b62';
+                document.getElementById('spec').innerHTML='HZCode\u662f\u4e00\u4e2a\u53ea\u4f7f\u7528\u6c49\u5b57\u7684\u4e8c\u7ef4\u7f16\u7a0b\u8bed\u8a00\uff0c\u8be5\u8bed\u8a00\u7684\u6587\u6863<a href="https://esolangs.org/wiki/HZCode">\u5728\u8fd9</a>\u3002<br><br>\u6309\u4e0b\u201c\u52a0\u8f7d\u201d\u6309\u94ae\u52a0\u8f7d\u4ee3\u7801\uff0c\u6309\u4e0b\u201c\u8fd0\u884c\u201d\u6309\u94ae\u8fd0\u884c\u3002\u4f60\u4e5f\u53ef\u4ee5\u8bbe\u7f6e\u901f\u5ea6\uff08\u6267\u884c\u4e24\u4e2a\u547d\u4ee4\u4e4b\u95f4\u7684\u95f4\u9694\u6beb\u79d2\u6570\uff09\u3002';
+            }
+        </script>
+    </body>
+</html>

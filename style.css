@@ -1,0 +1,56 @@
+.move{
+    background-color: red;
+    color: black;
+    text-align: center;
+}
+.rot{
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+.jump{
+    background-color: gold;
+    color: black;
+    text-align: center;
+}
+.stack{
+    background-color: brown;
+    color: white;
+    text-align: center;
+}
+.queue{
+    background-color: aqua;
+    color: black;
+    text-align: center;
+}
+.io{
+    background-color: purple;
+    color: white;
+    text-align: center;
+}
+.arit{
+    background-color: pink;
+    color: black;
+    text-align: center;
+}
+.const{
+    background-color: yellow;
+    color: black;
+    text-align: center;
+}
+.redun{
+    background-color: gray;
+    color: white;
+    text-align: center;
+}
+.ip{
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+.shown{
+    display: unset;
+}
