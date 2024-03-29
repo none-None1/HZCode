@@ -89,8 +89,8 @@ function interpret_step(code, rows, cols) {
     case "\u8df3": {
       var b = pop(curip.stack);
       var a = pop(curip.stack);
-      curip.x = a;
-      curip.y = b;
+      curip.x = a % rows;
+      curip.y = b % cols;
       queue.push(curip);
       return;
     }
