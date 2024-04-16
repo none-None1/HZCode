@@ -142,7 +142,11 @@ function interpret_step(code, rows, cols) {
       break;
     }
     case "\u53bb": {
-      curip.stack.pop();
+      pop(curip.stack);
+      break;
+    }
+    case "\u590d": {
+      curip.stack.push(ttop(curip.stack));
       break;
     }
     case "\u542c": {

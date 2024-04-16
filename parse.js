@@ -14,6 +14,7 @@ const styles = {
   "\u5165": "stack",
   "\u6362": "stack",
   "\u53bb": "stack",
+  "\u590d": "stack",
   "\u542c": "io",
   "\u8bf4": "io",
   "\u8bfb": "io",
